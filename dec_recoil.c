@@ -190,7 +190,10 @@ static void recoildec_finalize(GF_Filter *filter)
 static const GF_FilterCapability RECOILDecCaps[] =
 	{
 		CAP_UINT(GF_CAPS_INPUT, GF_PROP_PID_STREAM_TYPE, GF_STREAM_FILE),
-		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_FILE_EXT, "iff|ilbm|lbm|pi1|pi2|pi3|pc1|pc2|pc3|neo|doo|tny|ham|acbm"),
+		/* "msp" is Microsoft Paint 1/2, not a retro-computer format, but RECOIL
+		 * decodes it (RECOIL_DecodeMsp) and nothing else in the tree does, so it
+		 * is served here rather than by a decoder of its own. */
+		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_FILE_EXT, "iff|ilbm|lbm|pi1|pi2|pi3|pc1|pc2|pc3|neo|doo|tny|ham|acbm|msp"),
 		CAP_STRING(GF_CAPS_INPUT, GF_PROP_PID_MIME, "image/x-ilbm|image/x-iff|image/x-degas"),
 		CAP_UINT(GF_CAPS_OUTPUT, GF_PROP_PID_STREAM_TYPE, GF_STREAM_VISUAL),
 		CAP_UINT(GF_CAPS_OUTPUT, GF_PROP_PID_CODECID, GF_CODECID_RAW),
@@ -199,7 +202,7 @@ static const GF_FilterCapability RECOILDecCaps[] =
 GF_FilterRegister RECOILDecoderRegister = {
 	.name = "recoildec",
 	GF_FS_SET_DESCRIPTION("Retro computer image decoder (IFF/ILBM, Degas, ...)")
-		GF_FS_SET_HELP("This filter decodes retro computer picture formats (Amiga IFF/ILBM, Atari ST Degas PI1/PC1, and many others) using RECOIL.")
+		GF_FS_SET_HELP("This filter decodes retro computer picture formats (Amiga IFF/ILBM, Atari ST Degas PI1/PC1, Microsoft Paint MSP, and many others) using RECOIL.")
 			.private_size = sizeof(GF_RECOILDecCtx),
 	SETCAPS(RECOILDecCaps),
 	.configure_pid = recoildec_configure_pid,

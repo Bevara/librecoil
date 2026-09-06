@@ -2,7 +2,7 @@
     "name": "librecoil",
     "description": "Retro computer image decoder (IFF/ILBM, Degas, ...)",
     "filters":["recoildec"],
-    "help": "This filter decodes retro computer picture formats (Amiga IFF/ILBM, Atari ST Degas PI1/PC1, and many others) using RECOIL.",
+    "help": "This filter decodes retro computer picture formats (Amiga IFF/ILBM, Atari ST Degas PI1/PC1, Microsoft Paint MSP, and many others) using RECOIL.",
     "support": [
         "image"
     ],
@@ -15,7 +15,8 @@
       "ilbm" : "img",
       "lbm" : "img",
       "pi1" : "img",
-      "pc1" : "img"
+      "pc1" : "img",
+      "msp" : "img"
     },
     "licence_required":false
 }
