@@ -2,24 +2,33 @@
     "name": "librecoil",
     "version": "1.0.2",
     "description": "Retro computer image decoder (IFF/ILBM, Degas, ...)",
-    "filters":["recoildec"],
+    "filters": [
+        "recoildec"
+    ],
     "help": "This filter decodes retro computer picture formats (Amiga IFF/ILBM, Atari ST Degas PI1/PC1, Microsoft Paint MSP, and many others) using RECOIL.",
     "support": [
         "image"
     ],
-    "sources":"https://bevara.ddns.net/sources/librecoil.accessor",
-    "filter_source":{
-        "recoildec" : "dec_recoil.c"
+    "sources": "https://bevara.ddns.net/sources/librecoil.accessor",
+    "filter_source": {
+        "recoildec": "dec_recoil.c"
     },
-    "extension":{
-      "iff" : "img",
-      "ilbm" : "img",
-      "lbm" : "img",
-      "pi1" : "img",
-      "pc1" : "img",
-      "msp" : "img"
+    "extension": {
+        "iff": "img",
+        "ilbm": "img",
+        "lbm": "img",
+        "pi1": "img",
+        "pc1": "img",
+        "msp": "img"
     },
-    "using": ["mm_solver_minimal_1.0.1", "mm_solver_1.0.1", "mm_solver_1.0.2", "mm_solver_1.0.3", "mm_solver_1.0.4"],
+    "using": [
+        "mm_solver_minimal_1.0.1",
+        "mm_solver_1.0.1",
+        "mm_solver_1.0.2",
+        "mm_solver_1.0.3",
+        "mm_solver_1.0.4",
+        "mm_solver_1.0.5"
+    ],
     "patents": {
         "status": "royalty-free",
         "note": "retro computer images",
